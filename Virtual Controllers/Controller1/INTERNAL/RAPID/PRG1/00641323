@@ -1,0 +1,45 @@
+MODULE Module1
+	CONST robtarget Target_10:=[[1080,0,908.028317799],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_20_2:=[[1350,150,670.31163825],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_20:=[[1350,150,565],[0,0,1,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_30_2:=[[-450,1650,335.435889427],[0,0,1,0],[1,0,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_30:=[[-450,1650,295],[0,0,1,0],[1,0,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !***********************************************************
+    !
+    ! Module:  Module1
+    !
+    ! Description:
+    !   <Insert description here>
+    !
+    ! Author: Patrik
+    !
+    ! Version: 1.0
+    !
+    !***********************************************************
+    
+    
+    !***********************************************************
+    !
+    ! Procedure main
+    !
+    !   This is the entry point of your program
+    !
+    !***********************************************************
+    PROC main()
+        !Add your code here
+    ENDPROC
+	PROC Path_10()
+	    MoveL Target_10,v1000,z100,vac_gripper\WObj:=wobj0;
+	    MoveL Target_20_2,v1000,z100,vac_gripper\WObj:=wobj0;
+	    MoveL Target_20,v1000,fine,vac_gripper\WObj:=wobj0;
+	    PulseDO vezmi_box;
+	    WaitTime 1;
+	    MoveL Target_20_2,v1000,fine,vac_gripper\WObj:=wobj0;
+	    MoveL Target_30_2,v1000,z100,vac_gripper\WObj:=wobj0;
+	    MoveL Target_30,v1000,fine,vac_gripper\WObj:=wobj0;
+	    PulseDO poloz_box;
+	    WaitTime 1;
+	    MoveL Target_30_2,v1000,fine,vac_gripper\WObj:=wobj0;
+	    MoveL Target_10,v1000,z100,vac_gripper\WObj:=wobj0;
+	ENDPROC
+ENDMODULE
